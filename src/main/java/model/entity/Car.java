@@ -1,5 +1,7 @@
 package model.entity;
 
+import validation.Validation;
+
 public class Car {
 
   private final String carName;
@@ -10,17 +12,17 @@ public class Car {
     movedDistance = 0;
   }
 
-  private int getMovedDistance() {
+  public int getMovedDistance() {
     return this.movedDistance;
   }
 
-  private int setMovedDistance(int movedDistance) {
+  public int setMovedDistance(int movedDistance) {
     this.movedDistance = movedDistance;
     return movedDistance;
   }
 
-  private void moveDistance(int distance) {
-    this.movedDistance += distance;
+  public void moveDistance(int distance) {
+    this.movedDistance ++;
   }
 
   public String getCarName() {
