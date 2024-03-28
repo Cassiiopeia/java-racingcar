@@ -9,15 +9,15 @@ import model.entity.Car;
 
 public class OutputView {
   public static void printEnterCarNamesOutputMessage(){
-    System.out.println(ENTER_CAR_NAMES);
+    System.out.println(ENTER_CAR_NAMES.getMessage());
   }
 
   public static void printEnterAttemptCountMessage(){
-    System.out.println(ENTER_ATTEMPT_COUNT);
+    System.out.println(ENTER_ATTEMPT_COUNT.getMessage());
   }
 
   public static void printCarRacingResultHeader(){
-    System.out.println(CAR_RACING_RESULT_HEADER);
+    System.out.println(CAR_RACING_RESULT_HEADER.getMessage());
   }
 
   public static void printErrorMessage(String message) {
@@ -27,7 +27,7 @@ public class OutputView {
   public static void printRaceResult(List<Car> cars) {
     printCarRacingResultHeader();
     for (Car car : cars) {
-      System.out.println(car.getCarName() + " : " + "-".repeat(car.getMovedDistance()));
+      System.out.println(car.getCarName() + " :" + "-".repeat(car.getMovedDistance()));
     }
     System.out.println();
   }
