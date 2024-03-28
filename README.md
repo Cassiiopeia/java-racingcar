@@ -24,7 +24,7 @@ kokodak,kuku,cucu
 5
 
 실행 결과
-kokodak : -5
+kokodak : -
 kuku : -
 cucu : -
 
