@@ -28,7 +28,7 @@ public class Validation {
 
   // 랜덤 숫자 검증
   public static void validRandomValue(int randomInt) {
-    if (!(randomInt > 0 && randomInt < 9)) {
+    if (!(randomInt >= 0 && randomInt <= 9)) {
       throw new RacingCarException(ErrorCode.INVALID_RANDOM_VALUE);
     }
   }
