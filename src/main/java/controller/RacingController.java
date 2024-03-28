@@ -1,6 +1,5 @@
 package controller;
 
-import exception.RacingCarException;
 import service.RacingService;
 import validation.Validation;
 import view.InputView;
@@ -15,7 +14,6 @@ public class RacingController {
   }
 
   public void runRacingSystem() {
-    // TODO : 자동차 경주 시스템 로직
     OutputView.printEnterCarNamesOutputMessage();
     String[] carNames = InputView.getCarNamesInput();
     Validation.validCarNames(carNames);
