@@ -5,6 +5,7 @@ import static view.OutputMessage.ENTER_ATTEMPT_COUNT;
 import static view.OutputMessage.ENTER_CAR_NAMES;
 
 import java.util.List;
+import model.dto.RaceResultDto;
 import model.entity.Car;
 
 public class OutputView {
@@ -24,19 +25,16 @@ public class OutputView {
     System.out.println(message);
   }
 
-  public static void printRaceResult(List<Car> cars) {
+  public static void printRaceResult(RaceResultDto raceResultDto) {
     printCarRacingResultHeader();
-    for (Car car : cars) {
+    for (Car car : raceResultDto.getCars()) {
       System.out.println(car.getCarName() + " :" + "-".repeat(car.getMovedDistance()));
     }
-    System.out.println();
+    printWinners(raceResultDto.getWinnerNames());
   }
 
-  public static void printWinners(List<Car> winners){
-    String winnerNames = winners.stream()
-        .map(Car::getCarName)
-        .reduce((name1, name2) -> name1 + ", " + name2)
-        .orElse("");
+  private static void printWinners(List<String> winners) {
+    String winnerNames = String.join(", ", winners);
     System.out.println(winnerNames + "가 최종 우승했습니다.");
   }
 }
