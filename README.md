@@ -1,8 +1,35 @@
-# 자동차 경주 
+# 자동차 경주 게임 프로젝트 
 
-## 설정 사항
+## **구조**
+- controller
+- model
+  - dto
+  - entity
+- service
+- validation
+- view
+- exception
 
-- (중요) JDK 17 버전으로 진행한다.
+## **문제 해결 및 MVC 패턴 유지**
+- 이 프로젝트를 진행하며 MVC 패턴을 유지하려고 노력했습니다. 
+- 각 구성 요소의 역할을 명확히 분리하여 코드의 가독성과 유지보수성을 높이는 데 중점을 두었습니다.
+
+- Model
+  - Car: 자동차 이름, 이동거리 변경 로직
+  - RaceResultDto: 경주결과 -> 우승자 찾는 로직
+- View
+  - 사용자 인터페이스와 관련된 로직
+  - InputView: 사용자 입력 받음
+  - OutputView: console 출력
+- Controller
+  - 결과 -> 뷰에 반영
+  - 사용자의 입력 받고 게임 출력 처리
+- Service
+  - 경주 시작
+  - 자동차 생성
+  - 각각 랜덤 이동경주 관리
+- Application
+  - RacingMan.java : 애플리케이션 진입점 -> Controller 초기화 -> 게임실행
 
 ## **기능 요구사항**
 
