@@ -5,7 +5,6 @@ import static view.OutputMessage.ENTER_ATTEMPT_COUNT;
 import static view.OutputMessage.ENTER_CAR_NAMES;
 
 import java.util.List;
-import model.dto.RaceResultDto;
 import model.entity.Car;
 
 public class OutputView {
@@ -18,6 +17,7 @@ public class OutputView {
   }
 
   public static void printCarRacingResultHeader(){
+    System.out.println();
     System.out.println(CAR_RACING_RESULT_HEADER.getMessage());
   }
 

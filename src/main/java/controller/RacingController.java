@@ -22,6 +22,7 @@ public class RacingController {
     int attemptCount = getAttemptCount();
 
     // 경주 진행 및 각 시도 결과 출력
+    OutputView.printCarRacingResultHeader();
     List<List<Car>> eachRaceResults = racingService.startRace(carNames, attemptCount);
     eachRaceResults.forEach(OutputView::printRaceResult);
 
