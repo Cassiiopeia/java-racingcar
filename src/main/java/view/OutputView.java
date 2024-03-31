@@ -25,15 +25,15 @@ public class OutputView {
     System.out.println(message);
   }
 
-  public static void printRaceResult(RaceResultDto raceResultDto) {
-    printCarRacingResultHeader();
-    for (Car car : raceResultDto.getCars()) {
+  // 각 시도의 결과를 출력하는 메소드
+  public static void printRaceResult(List<Car> cars) {
+    for (Car car : cars) {
       System.out.println(car.getCarName() + " :" + "-".repeat(car.getMovedDistance()));
     }
-    printWinners(raceResultDto.getWinnerNames());
+    System.out.println();
   }
 
-  private static void printWinners(List<String> winners) {
+  public static void printWinners(List<String> winners) {
     String winnerNames = String.join(", ", winners);
     System.out.println(winnerNames + "가 최종 우승했습니다.");
   }

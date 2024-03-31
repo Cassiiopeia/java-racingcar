@@ -10,18 +10,22 @@ import validation.Validation;
 public class RacingService {
   private final Random random = new Random();
 
-  // 경주 시작 -> 결과 반환
-  public RaceResultDto startRace(String[] carNames, int attemptCount) {
+  // 경주 시작 -> 각 시도 후 자동차 리스트 반환
+  public List<List<Car>> startRace(String[] carNames, int attemptCount) {
     // Car 객체 생성
     List<Car> cars = createCars(carNames);
 
-    // 모든 Car 랜덤 이동
+    // 각각 랜덤이동 결과 저장
+    List<List<Car>> raceResults = new ArrayList<>();
+
+    // 모든 Car 랜덤이동 후 결과 저장
     for (int i = 0; i < attemptCount; i++) {
         randomMoveCars(cars);
+        raceResults.add(new ArrayList<>(cars));
     }
 
-    // Car 결과 반환
-    return new RaceResultDto(cars);
+    // 각각 랜덤이동 결과 List 반환
+    return raceResults;
   }
 
   private List<Car> createCars(String[] carNames){
